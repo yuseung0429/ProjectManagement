@@ -142,14 +142,6 @@ public class ModifyActivity extends AppCompatActivity {
                 {
                     Toast.makeText(getApplicationContext(), "Responsibility를 선택하세요.", Toast.LENGTH_SHORT).show();
                 }
-                else if(et_modify_weight.getText().toString().equals(""))
-                {
-                    Toast.makeText(getApplicationContext(), "Weight를 입력하세요.", Toast.LENGTH_SHORT).show();
-                }
-                else if(!Pattern.matches(Tool.regex_num,et_modify_weight.getText().toString()))
-                {
-                    Toast.makeText(getApplicationContext(), "Weight가 올바른 형식이 아닙니다.", Toast.LENGTH_SHORT).show();
-                }
                 else if(et_modify_startdate.getText().toString().equals("") || et_modify_deadline.getText().toString().equals(""))
                 {
                     Toast.makeText(getApplicationContext(), "Startdate 또는 Deadline을 입력하세요.", Toast.LENGTH_SHORT).show();
@@ -167,30 +159,59 @@ public class ModifyActivity extends AppCompatActivity {
                             Tool.dr.child("Project").child(projectid).child("title").setValue(et_modify_title.getText().toString());
                             Tool.dr.child("Project").child(projectid).child("respid").setValue(et_modify_respid.getText().toString());
                             Tool.dr.child("Project").child(projectid).child("startdate").setValue(et_modify_startdate.getText().toString());
+                            Toast.makeText(getApplicationContext(), "프로젝트 수정 완료 !!", Toast.LENGTH_SHORT).show();
+                            ProjectTool.updateProject(projectid);
+                            finish();
                             break;
                         }
                         case 1:
                         {
-                            Tool.dr.child("Project").child(projectid).child("subproject").child(subprojectid).child("title").setValue(et_modify_title.getText().toString());
-                            Tool.dr.child("Project").child(projectid).child("subproject").child(subprojectid).child("respid").setValue(et_modify_respid.getText().toString());
-                            Tool.dr.child("Project").child(projectid).child("subproject").child(subprojectid).child("weight").setValue(Integer.parseInt(et_modify_weight.getText().toString()));
-                            Tool.dr.child("Project").child(projectid).child("subproject").child(subprojectid).child("startdate").setValue(et_modify_startdate.getText().toString());
-                            Tool.dr.child("Project").child(projectid).child("subproject").child(subprojectid).child("deadline").setValue(et_modify_deadline.getText().toString());
+                            if(et_modify_weight.getText().toString().equals(""))
+                            {
+                                Toast.makeText(getApplicationContext(), "Weight를 입력하세요.", Toast.LENGTH_SHORT).show();
+                            }
+                            else if(!Pattern.matches(Tool.regex_num,et_modify_weight.getText().toString()))
+                            {
+                                Toast.makeText(getApplicationContext(), "Weight가 올바른 형식이 아닙니다.", Toast.LENGTH_SHORT).show();
+                            }
+                            else
+                            {
+                                Tool.dr.child("Project").child(projectid).child("subproject").child(subprojectid).child("title").setValue(et_modify_title.getText().toString());
+                                Tool.dr.child("Project").child(projectid).child("subproject").child(subprojectid).child("respid").setValue(et_modify_respid.getText().toString());
+                                Tool.dr.child("Project").child(projectid).child("subproject").child(subprojectid).child("weight").setValue(Integer.parseInt(et_modify_weight.getText().toString()));
+                                Tool.dr.child("Project").child(projectid).child("subproject").child(subprojectid).child("startdate").setValue(et_modify_startdate.getText().toString());
+                                Tool.dr.child("Project").child(projectid).child("subproject").child(subprojectid).child("deadline").setValue(et_modify_deadline.getText().toString());
+                                Toast.makeText(getApplicationContext(), "프로젝트 수정 완료 !!", Toast.LENGTH_SHORT).show();
+                                ProjectTool.updateProject(projectid);
+                                finish();
+                            }
                             break;
                         }
                         case 2:
                         {
-                            Tool.dr.child("Project").child(projectid).child("subproject").child(subprojectid).child("moduleproject").child(moduleprojectid).child("title").setValue(et_modify_title.getText().toString());
-                            Tool.dr.child("Project").child(projectid).child("subproject").child(subprojectid).child("moduleproject").child(moduleprojectid).child("respid").setValue(et_modify_respid.getText().toString());
-                            Tool.dr.child("Project").child(projectid).child("subproject").child(subprojectid).child("moduleproject").child(moduleprojectid).child("weight").setValue(Integer.parseInt(et_modify_weight.getText().toString()));
-                            Tool.dr.child("Project").child(projectid).child("subproject").child(subprojectid).child("moduleproject").child(moduleprojectid).child("startdate").setValue(et_modify_startdate.getText().toString());
-                            Tool.dr.child("Project").child(projectid).child("subproject").child(subprojectid).child("moduleproject").child(moduleprojectid).child("deadline").setValue(et_modify_deadline.getText().toString());
+                            if(et_modify_weight.getText().toString().equals(""))
+                            {
+                                Toast.makeText(getApplicationContext(), "Weight를 입력하세요.", Toast.LENGTH_SHORT).show();
+                            }
+                            else if(!Pattern.matches(Tool.regex_num,et_modify_weight.getText().toString()))
+                            {
+                                Toast.makeText(getApplicationContext(), "Weight가 올바른 형식이 아닙니다.", Toast.LENGTH_SHORT).show();
+                            }
+                            else
+                            {
+                                Tool.dr.child("Project").child(projectid).child("subproject").child(subprojectid).child("moduleproject").child(moduleprojectid).child("title").setValue(et_modify_title.getText().toString());
+                                Tool.dr.child("Project").child(projectid).child("subproject").child(subprojectid).child("moduleproject").child(moduleprojectid).child("respid").setValue(et_modify_respid.getText().toString());
+                                Tool.dr.child("Project").child(projectid).child("subproject").child(subprojectid).child("moduleproject").child(moduleprojectid).child("weight").setValue(Integer.parseInt(et_modify_weight.getText().toString()));
+                                Tool.dr.child("Project").child(projectid).child("subproject").child(subprojectid).child("moduleproject").child(moduleprojectid).child("startdate").setValue(et_modify_startdate.getText().toString());
+                                Tool.dr.child("Project").child(projectid).child("subproject").child(subprojectid).child("moduleproject").child(moduleprojectid).child("deadline").setValue(et_modify_deadline.getText().toString());
+                                Toast.makeText(getApplicationContext(), "프로젝트 수정 완료 !!", Toast.LENGTH_SHORT).show();
+                                ProjectTool.updateProject(projectid);
+                                finish();
+                            }
                             break;
                         }
                     }
-                    Toast.makeText(getApplicationContext(), "프로젝트 수정 완료 !!", Toast.LENGTH_SHORT).show();
-                    ProjectTool.updateProject(projectid);
-                    finish();
+
                 }
             }
         });
