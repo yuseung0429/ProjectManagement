@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace 'com.termproject.moblieprogramming'
+    namespace 'com.yuseung.projectmanagement'
     compileSdk 32
 
     defaultConfig {
-        applicationId "com.termproject.moblieprogramming"
+        applicationId "com.yuseung.projectmanagement"
         minSdk 21
         targetSdk 32
         versionCode 1
