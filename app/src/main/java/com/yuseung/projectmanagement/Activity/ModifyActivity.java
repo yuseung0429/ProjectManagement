@@ -159,6 +159,7 @@ public class ModifyActivity extends AppCompatActivity {
                             Tool.dr.child("Project").child(projectid).child("title").setValue(et_modify_title.getText().toString());
                             Tool.dr.child("Project").child(projectid).child("respid").setValue(et_modify_respid.getText().toString());
                             Tool.dr.child("Project").child(projectid).child("startdate").setValue(et_modify_startdate.getText().toString());
+                            Tool.dr.child("Project").child(projectid).child("deadline").setValue(et_modify_deadline.getText().toString());
                             Toast.makeText(getApplicationContext(), "프로젝트 수정 완료 !!", Toast.LENGTH_SHORT).show();
                             ProjectTool.updateProject(projectid);
                             finish();
