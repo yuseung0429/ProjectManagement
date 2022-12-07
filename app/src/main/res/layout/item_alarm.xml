@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_margin="10dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginHorizontal="10dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/nsb"
+            android:text="프로젝트"
+            android:layout_weight="2"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:textAlignment="center"></TextView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/nsb"
+            android:text="프로젝트 이름"
+            android:layout_weight="1"
+            android:id="@+id/tv_alarm_projecttitle"
+            android:textSize="20dp"
+            android:textAlignment="center"></TextView>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginBottom="5dp"
+        android:orientation="horizontal"
+        android:id="@+id/ll_alarm_subproject">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/nsb"
+            android:text="서브 프로젝트"
+            android:layout_weight="2"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:textAlignment="center"></TextView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/nsb"
+            android:text="프로젝트 이름"
+            android:layout_weight="1"
+            android:id="@+id/tv_alarm_subprojecttitle"
+            android:textSize="20dp"
+            android:textAlignment="center"></TextView>
+    </LinearLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginBottom="10dp"
+        android:textSize="15dp"
+        android:fontFamily="@font/nsb"
+        android:id="@+id/tv_alarm_message"></TextView>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:textSize="15dp"
+        android:fontFamily="@font/nsb"
+        android:layout_gravity="right"
+        android:textColor="@color/black"
+        android:text="2022-12-07"
+        android:id="@+id/tv_alarm_date"></TextView>
+</LinearLayout>

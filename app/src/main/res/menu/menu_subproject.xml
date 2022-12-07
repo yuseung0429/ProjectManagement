@@ -1,0 +1,12 @@
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/it_subproject_create"
+        android:title="서브프로젝트 생성"
+        ></item>
+    <item
+        android:id="@+id/it_subproject_send"
+        android:title="모두에게 알림 보내기"
+        ></item>
+</menu>
